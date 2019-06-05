@@ -12,7 +12,7 @@ public class MainWindow extends JFrame {
 	private JMenuBar menu = new JMenuBar();
 	DefaultListModel<String> model;
 	private JList<String> pageList;
-	private JTextArea diaryPageArea = new JTextArea(5, 30);
+	private JTextArea diaryPageArea = new JTextArea(15, 30);
 	private JButton buttonAdd = new JButton("Добавить запись");
 	private JButton buttonCheck = new JButton("Проверить целостность");
 	private Toolkit toolkit = Toolkit.getDefaultToolkit();
@@ -56,7 +56,7 @@ public class MainWindow extends JFrame {
 	private void configWindow() {
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		Dimension dimension = toolkit.getScreenSize();
-		this.setBounds(dimension.width / 4, dimension.height / 4, dimension.width / 2, dimension.height / 2);
+		this.setBounds(dimension.width / 4, dimension.height / 4, dimension.width / 3, dimension.height / 2);
 		this.setVisible(true);
 	}
 
@@ -135,6 +135,7 @@ public class MainWindow extends JFrame {
 		this.add(panelWest, BorderLayout.WEST);
 		this.add(panelSouth, BorderLayout.SOUTH);
 		this.add(panelCenter, BorderLayout.CENTER);
+		this.setResizable(false);
 	}
 
 	private void refreshPageList() {
